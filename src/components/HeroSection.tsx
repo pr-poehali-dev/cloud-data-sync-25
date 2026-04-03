@@ -1,9 +1,13 @@
-import { ArrowUpRight, ShieldCheck } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 import Icon from "@/components/ui/icon"
 
 export function HeroSection() {
+  const scrollToFeatures = () => {
+    document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <section className="flex flex-col items-center justify-center px-4 pt-14 pb-10 text-center">
       <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#1a1a1a] py-2 text-sm px-3 border border-[#2a2a2a]">
@@ -27,7 +31,11 @@ export function HeroSection() {
             Войти в личный кабинет <ArrowUpRight className="ml-2 h-4 w-4" />
           </Button>
         </Link>
-        <Button variant="outline" className="rounded-full border-gray-700 bg-transparent text-white hover:bg-gray-800 px-8 py-3 text-base">
+        <Button
+          onClick={scrollToFeatures}
+          variant="outline"
+          className="rounded-full border-gray-700 bg-transparent text-white hover:bg-gray-800 px-8 py-3 text-base"
+        >
           <Icon name="Play" size={16} className="mr-2 fill-green-500 text-green-500" /> Узнать возможности
         </Button>
       </div>
